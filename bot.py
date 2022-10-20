@@ -16,13 +16,17 @@ APPROVED = environ.get("APPROVED_WELCOME", "on").lower()
 @bot.on_message(filters.private & filters.command(["start"]))
 async def start(client: bot, message: Message):
     await client.send_message(chat_id=message.chat.id, text=f"**__Ok da 🙄__**")
-
-@bot.on_chat_join_request((filters.group | filters.channel) & filters.chat(CHAT_ID) if CHAT_ID else (filters.group | filters.channel))
-async def approve(client: bot, message: ChatJoinRequest):
-    chat=message.chat
+    
+    
+@bot.on_chat_join_request(filters.group | filters.channel)
+async def approve(bot,message: ChatJoinRequest):
+    chat=message.chat 
     user=message.from_user
-    await client.approve_chat_join_request(chat_id=chat.id, user_id=user.id)
-    if APPROVED == "on":
-        await client.send_message(chat_id=chat.id, text=TEXT.format(mention=user.mention, title=chat.title))
+    try:
+        await client.approve_chat_join_request(chat_id=chat.id, user_id=user.id)
+        await client.send_message(chat_id=-1001658152726,text="somebody joined")
+    except Exception as e:
+        await client.send_message(chat_id=-1001658152726,text={e})
+        
 
 bot.run()
