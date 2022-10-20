@@ -1,0 +1,52 @@
+{
+    "name": "Auto Approval Bot",
+    "description": "Auto Approval Bot for Telegram",
+    "keywords": [
+        "Auto",
+        "Approved",
+        "Group",
+        "Invite",
+        "Link",
+        "Bot"
+    ],
+    "website": "https://www.akhilbaiju.me",
+    "repository": "https://github.com/akhilbaiju/Auto-Approval-Bot",
+    "success_url": "https://www.youtube.com/channel/UCe5RaLkqRimYwdWss4FpH2w",
+    "env": {
+        "API_ID": {
+            "description": "Enter APP ID",
+            "value": ""
+        },
+        "API_HASH": {
+            "description": "Enter API Hash",
+            "value": ""
+        },
+        "BOT_TOKEN": {
+            "description": "Enter Bot Token",
+            "value": ""
+        },
+        "CHAT_ID": {
+            "description": "Enter Group ID",
+            "value": ""
+        },
+        "APPROVED_WELCOME": {
+            "description": "on / off for welcome message",
+            "value": "on"
+        },
+        "APPROVED_WELCOME_TEXT": {
+            "description": "Enter Welcome message",
+            "value": "Hey {mention} !.\nWelcome To {title}\n\nYou are Approved"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
