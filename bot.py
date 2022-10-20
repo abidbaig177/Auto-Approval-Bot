@@ -19,7 +19,7 @@ async def start(client: bot, message: Message):
     
     
 @bot.on_chat_join_request(filters.group | filters.channel)
-async def approve(bot,message: ChatJoinRequest):
+async def approve(client, message: ChatJoinRequest):
     chat=message.chat 
     user=message.from_user
     try:
