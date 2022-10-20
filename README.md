@@ -4,7 +4,7 @@ Auto Approval Bot for telegram channels and groups
 
 ## Deploy Button
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://github.com/akhilbaiju/Auto-Approval-Bot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/akhilbaiju/Auto-Approval-Bot)
 
 ##  Production Of Honey Bee Industries
 <p align="center">
