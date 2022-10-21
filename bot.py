@@ -15,7 +15,9 @@ APPROVED = environ.get("APPROVED_WELCOME", "on").lower()
 
 @bot.on_message(filters.private & filters.command(["start"]))
 async def start(client: bot, message: Message):
-    await client.send_message(chat_id=message.chat.id, text=f"**__Ok da 🙄__**")
+    await client.send_message(chat_id=message.chat.id, text=f"**__Im an auto approval bot for telegram__**",reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("Repository", url="https://github.com/akhilbaiju/Auto-Approval-Bot" )]]
+        ))
     
     
 @bot.on_chat_join_request(filters.group | filters.channel)
@@ -24,9 +26,8 @@ async def approve(client, message: ChatJoinRequest):
     user=message.from_user
     try:
         await client.approve_chat_join_request(chat_id=chat.id, user_id=user.id)
-        await client.send_message(chat_id=-1001658152726,text="somebody joined")
     except Exception as e:
-        await client.send_message(chat_id=-1001658152726,text={e})
+        await client.send_message(chat_id=chat.id,text={e})
         
 
 bot.run()
