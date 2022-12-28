@@ -16,6 +16,7 @@ ccaption = """\n\n<b><i>⚜️ To Join Click here
     🅷🅾️🅽🅴🆈 🅱️🅴🅴 🅼🅾️🆅🅸🅴🆂 </b></i>"""
 
 ccaption2 = """\n<b><i>⚜️ Join    @h4hbm</b></i>"""
+ccaption3 = """\n<b><i>⚜️ Join    @honeybeemusic</b></i>"""
 CHAT_ID = [int(bot) for bot in environ.get("CHAT_ID", None).split()]
 TEXT = environ.get("APPROVED_WELCOME_TEXT", "Hello {mention}\nWelcome To {title}\n\nYou are Approved")
 APPROVED = environ.get("APPROVED_WELCOME", "on").lower()
@@ -45,6 +46,9 @@ async def caption2(client, message):
             newcap=ccaption
         else:
             newcap="<b><i>"+str(ogcap)+"</b></i>"+ccaption
+        await message.copy(message.chat.id, caption=newcap)
+    elif grp==-1001534921211:
+        newcap="."+ccaption3
         await message.copy(message.chat.id, caption=newcap)
     else:
         ogcap=message.caption
