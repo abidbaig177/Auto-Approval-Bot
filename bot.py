@@ -4,9 +4,9 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, 
 
 bot=Client(
     "Auto Approval Bot",
-    bot_token = environ["BOT_TOKEN"],
-    api_id = int(environ["API_ID"]),
-    api_hash = environ["API_HASH"]
+    bot_token = environ["6089319280:AAEJ6Y2KsrvVaHQiUfk8fLyykZQkqFlwR7w"],
+    api_id = int(environ["23864794"]),
+    api_hash = environ["0176a32f396e45a0a33644f678507d76"]
 )
 ccaption = """\n\n<b><i>⚜️ To Join Click here
 ⭐️ @honeybeemovies
